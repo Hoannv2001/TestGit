@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New IssueBook{% endblock %}
+
+{% block body %}
+    <h1>Create new IssueBook</h1>
+
+    {{ include('issue_book/_form.html.twig') }}
+
+    <a href="{{ path('app_issue_book_index') }}">back to list</a>
+{% endblock %}

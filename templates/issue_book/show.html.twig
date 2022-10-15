@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}IssueBook{% endblock %}
+
+{% block body %}
+    <h1>IssueBook</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ issue_book.id }}</td>
+            </tr>
+            <tr>
+                <th>IssueDate</th>
+                <td>{{ issue_book.issueDate ? issue_book.issueDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ReturnDate</th>
+                <td>{{ issue_book.returnDate ? issue_book.returnDate|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_issue_book_index') }}">back to list</a>
+
+    <a href="{{ path('app_issue_book_edit', {'id': issue_book.id}) }}">edit</a>
+
+    {{ include('issue_book/_delete_form.html.twig') }}
+{% endblock %}
